@@ -13,124 +13,93 @@
     />
   </head>
   <body>
-    <header>
-      <div class="navbar">
-        <a href="#" class="navbar_logo">YG Logo</a>
-
-        <div class="navbar_links" id="nav_bar">
-          <ul>
-            <li class="nav_items">
-              <a href="#about" class="navbar_link">關於</a>
-            </li>
-            <li class="nav_items">
-              <a href="#projects" class="navbar_link">作品集</a>
-            </li>
-            <li class="nav_items">
-              <a href="#footer" class="navbar_link">聯絡我</a>
-            </li>
-          </ul>
-        </div>
+      <header>
+    <nav class="navbar">
+      <a href="#" class="navbar_logo">YG Logo</a>
+      <div class="navbar_links" id="nav_bar">
+        <ul>
+          <li><a href="#about" class="navbar_link">關於</a></li>
+          <li><a href="#projects" class="navbar_link">作品集</a></li>
+          <li><a href="#contact" class="navbar_link">聯絡我</a></li>
+        </ul>
       </div>
-      <div class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </div>
-    </header>
-
-    <section class="hero hidden-section">
-      <video src="background2.mp4" autoplay muted loop></video>
-      <div class="hero_img">
-        <img src="hero.jpg" alt="hero_img" />
-      </div>
-      <div class="hero_text">
-        <h1>Welcome to YG Portfolio</h1>
-        <p>This is a portfolio website for YG, a web developer and designer.</p>
-        <a href="https://github.com/" target="_blank" class="btn">GitHub</a>
-      </div>
-      <div class="scroll-down">
+      <div class="hamburger" id="hamburger" aria-label="切換選單" role="button" tabindex="0">
+        <span></span>
+        <span></span>
         <span></span>
       </div>
-    </section>
-    <section class="about hidden-section" id="about">
-      <h2 class="about_title">ABOUT ME</h2>
-      <hr class="title-line" />
-      <div class="about_card">
-        <img src="about_img.png" alt="about_img" />
-        <p>
-          我是 YG，正朝著成為專業前端工程師的目標努力前進。具備 HTML、CSS 和
-          JavaScript 的基礎能力，目前正積極學習 Vue.js 框架與 API
-          串接技術，持續強化前端開發實力。我的短期目標是於 2025
-          年底前順利投入前端相關工作，並累積實戰經驗。這個作品集展示了我在學習過程中的練習成果與實作專案，從切版到互動設計，都是我一步步實踐的過程。歡迎瀏覽，也誠摯期待您給予寶貴的建議與回饋，幫助我持續成長與進步。
-        </p>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <video src="background2.mp4" autoplay muted loop></video>
+    <div class="hero_img">
+      <img src="hero.jpg" alt="hero image" />
+    </div>
+    <div class="hero_text">
+      <h1>Welcome to YG Portfolio</h1>
+      <p>這是 YG 的個人作品集網站，展示前端與設計作品。</p>
+      <a href="https://github.com/" target="_blank" class="btn">GitHub</a>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2 class="about_title">ABOUT ME</h2>
+    <hr class="title-line" />
+    <div class="about_card">
+      <img src="about_img.png" alt="about image" />
+      <p>我是 YG，專注前端開發，學習 Vue.js 與 API 串接，持續成長中。</p>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <h2 class="projects_title">MY PROJECTS</h2>
+    <hr class="title-line" />
+    <div class="projects_wrapper">
+      <div class="projects_card">
+        <img src="project1.png" alt="Project 1" />
+        <h2>作品集1</h2>
+        <p>這是我的切版練習與實作專案。</p>
+        <a href="https://github.com/" target="_blank" class="project_btn">GitHub</a>
       </div>
-    </section>
-
-    <section class="projects hidden-section" id="projects">
-      <h1 class="projects_title hidden-section">MY PROJECTS</h1>
-      <hr class="title-line" />
-      <div class="projects_wrapper">
-        <div class="projects_card">
-          <div class="project_img">
-            <img src="project1.png" alt="project1" />
-          </div>
-          <h2>作品集1</h2>
-          <p>這個作品集展示了我在學習過程中的練習成果與實作專案。</p>
-          <a href="https://github.com/" class="project_btn" target="_blank"
-            >GitHub</a
-          >
-        </div>
-        <div class="projects_card">
-          <div class="project_img">
-            <img src="project1.png" alt="project1" />
-          </div>
-          <h2>作品集2</h2>
-          <p>這個作品集展示了我在學習過程中的練習成果與實作專案。</p>
-          <a href="https://github.com/" class="project_btn" target="_blank"
-            >GitHub</a
-          >
-        </div>
-        <div class="projects_card">
-          <div class="project_img">
-            <img src="project1.png" alt="project1" />
-          </div>
-          <h2>作品集3</h2>
-          <p>這個作品集展示了我在學習過程中的練習成果與實作專案。</p>
-          <a href="https://github.com/" class="project_btn" target="_blank"
-            >GitHub</a
-          >
-        </div>
+      <div class="projects_card">
+        <img src="project2.png" alt="Project 2" />
+        <h2>作品集2</h2>
+        <p>這是我的 Vue.js 與 API 串接專案。</p>
+        <a href="https://github.com/" target="_blank" class="project_btn">GitHub</a>
       </div>
-    </section>
-
-    <section class="footer" id="footer">
-      <h1 class="contact hidden-section">CONTACT ME</h1>
-      <hr class="title-line" />
-      <div class="contact__wrapper hidden-section">
-        <div class="contact_gmail">
-          <img src="email.png" alt="gmail" class="email_icon" />
-          <h2>ian900903@gmail.com</h2>
-        </div>
+      <div class="projects_card">
+        <img src="project3.png" alt="Project 3" />
+        <h2>作品集3</h2>
+        <p>這是我的互動設計專案。</p>
+        <a href="https://github.com/" target="_blank" class="project_btn">GitHub</a>
       </div>
-    </section>
-    <script>
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      });
+    </div>
+  </section>
 
-      const hiddenSections = document.querySelectorAll(".hidden-section");
-      hiddenSections.forEach((section) => observer.observe(section));
+  <section class="contact" id="contact">
+    <h1>CONTACT ME</h1>
+    <hr class="title-line" />
+    <div class="contact__wrapper">
+      <img src="email.png" alt="Email icon" class="email_icon" />
+      <span>ian900903@gmail.com</span>
+    </div>
+  </section>
 
-      document.addEventListener("dragstart", function (e) {
-        e.preventDefault();
-      }); // prevent default drag
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navBar = document.getElementById("nav_bar");
 
-      document.getElementById("hamburger").addEventListener("click", () => {
-        document.getElementById("nav_bar").classList.toggle("active");
-      });
-    </script>
-  </body>
+    hamburger.addEventListener("click", () => {
+      navBar.classList.toggle("active");
+    });
+
+    // 可加鍵盤Enter鍵切換選單 (無障礙)
+    hamburger.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") {
+        navBar.classList.toggle("active");
+      }
+    });
+  </script>
+</body>
 </html>
