@@ -1,23 +1,38 @@
 /* ---------- Reset & 基本設定 ---------- */
+:root {
+  --primary-color: #333;
+  --accent-color: #1f4a66;
+  --border-color: #c0b1b1;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --font-size-lg: clamp(2rem, 5vw, 4rem);
+  --font-size-md: clamp(1.5rem, 3vw, 2rem);
+  --font-size-sm: clamp(1rem, 2vw, 1.5rem);
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+html {
+  font-size: 62.5%; /* 1rem = 10px，方便計算 */
+}
 body {
   font-family: "Intel One Mono", "Noto Sans Traditional Chinese", monospace;
   line-height: 1.6;
   background-color: #ffffff;
-  color: #333;
+  color: var(--primary-color);
+  font-size: 1.6rem; /* 基礎字體大小 */
 }
 
 .title-line {
-  width: 30rem;
+  width: min(30rem, 80%); /* 響應式寬度 */
   height: 2px;
   background-color: #747d82;
   border: none;
-  margin: 2rem auto 2rem auto;
+  margin: var(--spacing-md) auto;
   border-radius: 2px;
 }
 img {
@@ -30,7 +45,7 @@ img {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 2rem;
+  padding:var(--spacing-md);
   background-color: #ffffff;
 }
 .hamburger {
@@ -40,23 +55,24 @@ img {
 }
 .hamburger span {
   height: 3px;
-  background: #333;
+  background:var(--primary-color);
   margin: 5px 0;
   width: 25px;
+  transition: all 0.3s ease;
 }
 /* ---------- 導覽列中的連結 ---------- */
 .navbar_logo {
-  font-size: 3rem;
+  font-size:var(--font-size-lg);
   font-weight: bold;
-  color: #333;
+  color: var(--primary-color);
   text-decoration: none;
   font-family: "Intel One Mono", monospace;
 }
 .navbar_links a {
-  font-size: 2rem;
+  font-size:var(--font-size-md);
   font-weight: 500;
   text-decoration: none;
-  color: #333;
+  color:var(--primary-color);
   position: relative;
   display: inline-block;
   padding: 0.5rem 0;
@@ -66,7 +82,7 @@ img {
   display: flex;
   list-style: none;
   margin-right: 1rem;
-  gap: 2rem;
+  gap: var(--spacing-lg);
 }
 .navbar_link::after {
   content: "";
@@ -75,26 +91,26 @@ img {
   bottom: 0;
   width: 0%;
   height: 2px;
-  background-color: #1f4a66;
+  background-color:var(--accent-color);
   transition: width 0.3s ease;
 }
 .navbar_link:hover::after {
   width: 100%;
 }
 .navbar_link:hover {
-  color: #1f4a66;
+  color:var(--accent-color);
 }
 /* ---------- body ---------- */
 .hero {
   position: relative;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  overflow: hidden;
 }
 .hero video {
   position: absolute;
@@ -105,13 +121,14 @@ img {
   object-fit: cover; /* 視訊填滿容器 */
   z-index: -1; /* 放在內容後面 */
   opacity: 0.3; /* 可調整透明度 */
+  transition: opacity 0.5s ease;
 }
 
 .hero_img img {
   width: 100%;
-  max-width: 400px;
+  max-width: min(400px, 80vw);
   border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-color);
 }
 .hero_text {
   text-align: center;
@@ -119,15 +136,15 @@ img {
   flex-direction: column;
 }
 .hero_text h1 {
-  font-size: 3rem;
+  font-size:var(--font-size-lg);
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-sm);
   font-family: "Intel One Mono", monospace;
 }
 .hero_text p {
   color: #544545;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
+  font-size: var(--font-size-md);
+  margin-bottom: var(--spacing-lg);
   font-family: "Intel One Mono", monospace;
 }
 .hero_img {
@@ -141,28 +158,27 @@ img {
   align-items: center;
   margin: 0 auto;
   font-weight: 500;
-  font-size: 1.5em;
-
-  padding: 1rem;
-  width: 10rem;
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-sm);
+  width: min(10rem, 50%);
   border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
+  border: var(--primary-color) 0.1rem solid;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: rgb(255, 255, 255);
+  box-shadow:var(--shadow-color);
+  background-color: #ffffff;
   font-family: "Intel One Mono", monospace;
   text-decoration: none;
   color: black;
 }
 .btn:hover {
-  background-color: rgb(53, 53, 53);
-  color: rgb(255, 255, 255);
+  background-color:var(--primary-color);
+  color: #ffffff;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 .scroll-down {
   position: absolute;
-  bottom: 2rem;
+  bottom: var(--spacing-md);
   left: 50%;
   transform: translateX(-50%);
   width: 50px;
@@ -184,19 +200,21 @@ img {
 }
 /*- ---------- 關於 ---------- */
 .about {
-  padding: 4rem 2rem;
+  padding:var(--spacing-lg) var(--spacing-md);
   text-align: center;
   min-height: 100vh;
+  max-width: 90%;
+  margin: var(--spacing-lg) auto;
 }
 .about_title {
   font-size: 4rem;
   text-align: center;
   flex-direction: column;
 }
-.about_card {
+.about {
   display: block;
   background-color: #ffffff;
-  max-width: 60%;
+  max-width: 70%;
   margin: 3rem auto;
 }
 .about_card img {
@@ -368,6 +386,84 @@ img {
     max-width: 90%;
   }
 
+  .contact__wrapper {
+    width: 90%;
+    padding: 2rem;
+  }
+}
+@keyframes scrollMove {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+}
+@media screen and (max-width: 375px) {
+  .navbar_links {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+  }
+  .navbar_links.active {
+    display: flex;
+  }
+  .hamburger {
+    display: flex;
+  }
+
+  .hero {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero .btn{
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    width: 8rem;
+    border-radius: 2rem;
+  }
+  .hero p {
+    font-size: 1.5rem;
+  }
+  .hero_img {
+    width: 70%;
+  }
+  .about h1{
+    font-size: 1.5rem;
+  }
+  .about_card p{
+    font-size: 1.5rem;
+  }
+  .about_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+  .about_card img {
+    margin-bottom: 2rem;
+  }
+  .about_card p {
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .projects_wrapper {
+    flex-direction: column;
+    margin: 2rem;
+  }
+
+  .projects_card {
+    max-width: 90%;
+  }
+  .contact h1{
+    font-size: 1.5rem;
+  }
   .contact__wrapper {
     width: 90%;
     padding: 2rem;
