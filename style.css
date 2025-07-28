@@ -136,14 +136,14 @@ img {
   flex-direction: column;
 }
 .hero_text h1 {
-  font-size:var(--font-size-lg);
+  font-size:calc(var(--font-size-lg)*1.2);
   font-weight: bold;
   margin-bottom: var(--spacing-sm);
   font-family: "Intel One Mono", monospace;
 }
 .hero_text p {
   color: #544545;
-  font-size: var(--font-size-md);
+  font-size: clac(var(--font-size-md)*10);
   margin-bottom: var(--spacing-lg);
   font-family: "Intel One Mono", monospace;
 }
@@ -207,75 +207,73 @@ img {
   margin: var(--spacing-lg) auto;
 }
 .about_title {
-  font-size: 4rem;
+  font-size: var(--font-size-lg);
   text-align: center;
   flex-direction: column;
 }
 .about {
   display: block;
   background-color: #ffffff;
-  max-width: 70%;
-  margin: 3rem auto;
+  width: 100%;
+  max-width: 90%;
+  margin: 0rem auto;
 }
 .about_card img {
   width: 100%;
   max-width: 400px;
   max-height: 600px;
   border-radius: 30px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-color);
 }
 
 .about_card p {
-  padding: 3rem;
-  font-size: 2rem;
+  padding: var(--spacing-md);
+  font-size: var(--font-size-md);
   line-height: 2.5;
 }
 /* ---------- 作品卡片------- */
 .projects {
   text-align: center;
+  padding: var(--spacing-lg) var(--spacing-md);
 }
 .projects_title {
-  font-size: 4rem;
+  font-size: var(--font-size-lg);
   text-align: center;
 }
 
 .projects_wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 3rem;
-  margin: 5rem 10rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  margin: var(--spacing-lg) auto;
+  max-width: 90%;
 }
 
 .project_img img {
   max-width: 600px;
   width: 100%;
   border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-color);
 }
 
 .projects_card {
-  width: 100%;
-  max-width: 500px;
-  min-width: unset;
-  background-color: #fff;
-  padding: 1rem;
+  background-color: #ffffff;
+  padding: var(--spacing-md);
   border-radius: 20px;
-  border: #c0b1b1 0.2rem solid;
+  border: var(--border-color) 0.2rem solid;
   transition: box-shadow 0.5s ease;
 }
 .projects_card:hover {
   box-shadow: 0 0 15px rgba(19, 13, 13, 0.5);
 }
 .projects_card h2 {
-  font-size: 2rem;
-  margin-top: 2rem;
+  font-size: var(--font-size-md);
+  margin-top: var(--spacing-md);
 }
 
 .projects_card p {
-  font-size: 1.5rem;
-  margin: 1rem 1rem;
+  font-size: var(--font-size-sm);
+  margin: var(--spacing-sm);
 }
 .project_btn {
   display: flex;
@@ -283,45 +281,47 @@ img {
   align-items: center;
   margin: 0 auto;
   font-weight: 600;
-  font-size: 1.5em;
-  transition: all 0.3s ease;
-  padding: 1rem;
-  width: 8rem;
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-sm);
+  width: min(8rem, 50%);
   border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: rgb(255, 255, 255);
-  color: inherit;
+  border: var(--primary-color) 0.1rem solid;
+  box-shadow: var(--shadow-color);
+  background-color: #ffffff;
+  color: var(--primary-color);
   text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: "Intel One Mono", monospace;
 }
 .project_btn:hover {
-  background-color: rgb(53, 53, 53);
-  color: rgb(255, 255, 255);
-  cursor: pointer;
+  background-color: var(--primary-color);
+  color: #ffffff;
 }
 /* ---------- 聯絡 ---------- */
 .contact {
-  font-size: 4rem;
+  font-size: var(--font-size-lg);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: var(--spacing-lg) var(--spacing-md);
 }
 .contact__wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  border: #c0b1b1 0.2rem solid;
-  padding: 2rem 2rem;
-  margin: 5rem auto;
-  width: 30%;
+  border: var(--border-color) 0.2rem solid;
+  padding: var(--spacing-md);
+  margin: var(--spacing-lg) auto;
+  width: min(90%, 600px);
 }
 .contact_gmail {
   display: flex;
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
+  gap: var(--spacing-sm);
 }
 .email_icon {
   width: 40px;
@@ -342,53 +342,48 @@ img {
 }
 
 /* ---------- 媒體查詢 ---------- */
-@media screen and (max-width: 768px) {
+@media (min-width: 768px) {
   .navbar_links {
-    display: none;
-    flex-direction: column;
-    text-align: center;
-  }
-  .navbar_links.active {
     display: flex;
+    flex-direction: row;
+    width: auto;
   }
+
   .hamburger {
-    display: flex;
+    display: none;
   }
 
   .hero {
     flex-direction: column;
-    gap: 3rem;
+    gap: var(--spacing-lg);
   }
 
   .hero_img {
     width: 100%;
   }
 
-  .about_card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .hero_text h1 {
+    font-size: var(--font-size-lg);
   }
-  .about_card img {
-    margin-bottom: 2rem;
+
+  .hero_text p {
+    font-size: var(--font-size-md);
   }
-  .about_card p {
-    padding: 1rem;
-    font-size: 1.5rem;
+
+  .about {
+    max-width: 70%;
   }
 
   .projects_wrapper {
-    flex-direction: column;
-    margin: 2rem;
+    margin: var(--spacing-lg) auto;
   }
 
   .projects_card {
-    max-width: 90%;
+    max-width: 500px;
   }
 
   .contact__wrapper {
-    width: 90%;
-    padding: 2rem;
+    width: min(30%, 600px);
   }
 }
 @keyframes scrollMove {
