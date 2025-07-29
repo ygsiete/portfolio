@@ -7,9 +7,9 @@
   --spacing-sm: 1rem;
   --spacing-md: 2rem;
   --spacing-lg: 3rem;
-  --font-size-lg: clamp(2rem, 5vw, 4rem);
-  --font-size-md: clamp(1.5rem, 3vw, 2rem);
-  --font-size-sm: clamp(1rem, 2vw, 1.5rem);
+  --font-size-lg: clamp(3rem, 5vw, 4rem);
+  --font-size-md: clamp(2rem, 3vw, 3rem);
+  --font-size-sm: clamp(1.5rem, 2vw, 2rem);
 }
 * {
   margin: 0;
@@ -243,7 +243,7 @@ img {
 
 .projects_wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: var(--spacing-lg);
   margin: var(--spacing-lg) auto;
   max-width: 90%;
@@ -283,7 +283,7 @@ img {
   font-weight: 600;
   font-size: var(--font-size-sm);
   padding: var(--spacing-sm);
-  width: min(8rem, 50%);
+  width: min(10rem, 50%);
   border-radius: 2rem;
   border: var(--primary-color) 0.1rem solid;
   box-shadow: var(--shadow-color);
@@ -328,7 +328,9 @@ img {
   height: 40px;
   margin-right: 1rem;
 }
-
+.contact_gmail h2{
+  font-size: var(--font-size-sm);
+}
 /* -------浮現動畫------- */
 .hidden-section {
   opacity: 0;
