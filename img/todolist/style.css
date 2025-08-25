@@ -1,0 +1,645 @@
+/* ---------- Reset & 基本設定 ---------- */
+:root {
+  --primary-color: #333;
+  --accent-color: #1f4a66;
+  --border-color: #c0b1b1;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --font-size-lg: clamp(3rem, 5vw, 4rem);
+  --font-size-md: clamp(2rem, 3vw, 3rem);
+  --font-size-sm: clamp(1.5rem, 2vw, 2rem);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%; 
+}
+body {
+  font-family: "Intel One Mono", "Noto Sans Traditional Chinese", monospace;
+  line-height: 1.6;
+  background-color: #ffffff;
+  color: var(--primary-color);
+  font-size: 1.6rem; /* 基礎字體大小 */
+}
+
+.title-line {
+  width: min(30rem, 80%); /* 響應式寬度 */
+  height: 2px;
+  background-color: #747d82;
+  border: none;
+  margin: var(--spacing-md) auto;
+  border-radius: 2px;
+}
+img {
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ---------- 導覽列 ---------- */
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:var(--spacing-md);
+  background-color: #ffffff;
+  width: 100%;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.hamburger span {
+  height: 3px;
+  background:var(--primary-color);
+  margin: 5px 0;
+  width: 25px;
+  transition: all 0.3s ease;
+}
+/* ---------- 導覽列中的連結 ---------- */
+.navbar_logo {
+  font-size:var(--font-size-lg);
+  font-weight: bold;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-family: "Intel One Mono", monospace;
+  margin-left: 20%;
+}
+.navbar_links {
+  margin-right: 15%;
+}
+.navbar_links a {
+  font-size:var(--font-size-md);
+  font-weight: 500;
+  text-decoration: none;
+  color:var(--primary-color);
+  position: relative;
+  display: inline-block; 
+  padding: 0.5rem 0;
+  margin-right: var(--spacing-lg);
+  transition: color 0.3s ease;
+}
+
+.navbar_links ul {
+  display: flex;
+  list-style: none;
+  margin-right: 1rem;
+  gap: var(--spacing-lg);
+  
+}
+.navbar_link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color:var(--accent-color);
+  transition: width 0.3s ease;
+}
+.navbar_link:hover::after {
+  width: 100%;
+}
+.navbar_link:hover {
+  color:var(--accent-color);
+}
+/* ---------- body ---------- */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+.hero_background {
+  margin-top: 10%;
+  height: 100vh;
+}
+.hero_background img{
+  margin-top: var(--font-size-lg);
+  height: auto;
+  max-width: min(1200px, 80vw);
+}
+.hero_img img {
+  width: 100%;
+  max-width: min(400px, 80vw);
+  border-radius: 50%;
+  box-shadow: var(--shadow-color);
+}
+.hero_text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.hero_text h1 {
+  font-size:calc(var(--font-size-lg)*1.2);
+  font-weight: bold;
+  margin-bottom: var(--spacing-sm);
+  font-family: "Intel One Mono", monospace;
+}
+.hero_text p {
+  color: #544545;
+  font-size: clac(var(--font-size-md)*10);
+  margin-bottom: var(--spacing-lg);
+  font-family: "Intel One Mono", monospace;
+}
+.hero_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-sm);
+  width: min(10rem, 50%);
+  border-radius: 2rem;
+  border: var(--primary-color) 0.1rem solid;
+  transition: all 0.3s ease;
+  box-shadow:var(--shadow-color);
+  background-color: #ffffff;
+  font-family: "Intel One Mono", monospace;
+  text-decoration: none;
+  color: black;
+}
+.btn:hover {
+  background-color:var(--primary-color);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/*- ---------- 關於 ---------- */
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.scroll-down span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-bottom: 2px solid #333;
+  border-right: 2px solid #333;
+  transform: rotate(45deg);
+  animation: arrow-down 1.5s infinite;
+}
+
+.scroll-down span:nth-child(2) {
+  animation-delay: 0.3s; /* 第二個箭頭稍微延遲 */
+}
+
+@keyframes arrow-down {
+  0% {
+    transform: rotate(45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(45deg) translate(5px, 5px);
+    opacity: 0;
+  }
+}
+
+.about  {
+  padding:var(--spacing-lg) var(--spacing-md);
+  text-align: center;
+  min-height: 100vh;
+  max-width: 100%;
+  margin: var(--spacing-lg) auto;
+}
+.about_title {
+  font-size: var(--font-size-lg);
+  text-align: center;
+  flex-direction: column;
+}
+
+.about_card img {
+  width: 100%;
+  max-width: 400px;
+  max-height: 600px;
+  border-radius: 30px;
+  box-shadow: var(--shadow-color);
+  border: #747d82 0.2rem solid;
+}
+.about_card p {
+  padding: var(--spacing-md);
+  font-size: var(--font-size-md);
+  line-height: 2.5;
+  max-width: 90%;
+  margin: var(--spacing-lg) auto;
+}
+.skills {
+  max-width: 600px;
+  margin: var(--spacing-lg) auto;
+  padding: 20px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.skills_title {
+  font-size: var(--font-size-lg);
+  font-weight: bold;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+}
+
+.skill {
+  margin-bottom: var(--spacing-lg);
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--primary-color);
+}
+
+.skill-bar {
+  position: relative;
+  background: linear-gradient(90deg, #cbbaba, #d0d0d0);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 18px;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.skill-progress {
+  background: linear-gradient(
+    90deg, 
+    var(--accent-color) 0%, 
+    rgba(31, 74, 102, 0.8) 50%, 
+    var(--accent-color) 100%
+  );
+  height: 100%;
+  width: 0;
+  border-radius: 12px;
+  box-shadow: 0 0 6px rgba(31, 74, 102, 0.6);
+  transition: width 1.5s ease-in-out;
+}
+
+
+.skill-num {
+  font-size: 0.9rem;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.skill-num.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ---------- 作品卡片------- */
+.projects {
+  text-align: center;
+  padding: var(--spacing-lg) var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.projects_title {
+  font-size: var(--font-size-lg);
+  text-align: center;
+}
+
+.projects_wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: calc(var(--spacing-lg));
+  margin: var(--spacing-lg) auto;
+  width:80%;
+  justify-items: center;
+}
+
+.project_img img {
+  max-width: 100%;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: var(--shadow-color);
+}
+
+.projects_card {
+  background-color: #ffffff;
+  padding: var(--spacing-md);
+  border-radius: 20px;
+  border: var(--border-color) 0.2rem solid;
+  transition: box-shadow 0.5s ease;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.projects_card:hover {
+  box-shadow: 0 0 15px rgba(19, 13, 13, 0.5);
+}
+.projects_card h2 {
+  font-size: var(--font-size-md);
+  margin-top: var(--spacing-md);
+}
+
+.projects_card p {
+  font-size: var(--font-size-sm);
+  margin: var(--spacing-sm);
+}
+.project_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-sm);
+  width: min(10rem, 50%);
+  border-radius: 2rem;
+  border: var(--primary-color) 0.1rem solid;
+  box-shadow: var(--shadow-color);
+  background-color: #ffffff;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: "Intel One Mono", monospace;
+}
+.project_btn:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+/* ---------- 聯絡 ---------- */
+.contact {
+  font-size: var(--font-size-lg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: var(--spacing-lg);
+}
+.contact__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: var(--border-color) 0.2rem solid;
+  padding: var(--spacing-md);
+  margin: var(--spacing-lg) auto;
+  width: min(90%, 600px);
+}
+.contact_gmail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+.email_icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 1rem;
+}
+.contact_gmail h2{
+  font-size: var(--font-size-sm);
+}
+/* -------浮現動畫------- */
+.hidden-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.hidden-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- 媒體查詢 ---------- */
+
+@media (min-width: 768px) {
+  .navbar_links {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+  }
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+
+  .hero {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .hero_img {
+    width: 100%;
+  }
+
+  .hero_text h1 {
+    font-size: var(--font-size-lg);
+  }
+
+  .hero_text p {
+    font-size: var(--font-size-md);
+  }
+  .about_card img {
+    max-width: 400px;
+  }
+  .about {
+    max-width: 90%;
+  }
+
+  .projects_wrapper {
+    margin: var(--spacing-lg) auto;
+  }
+
+  .projects_card {
+    max-width: 500px;
+  }
+
+  .contact__wrapper {
+    width: min(30%, 600px);
+  }
+  
+}
+/* 小螢幕（手機，<= 767px） */
+@media screen and (max-width: 767px) {
+  .navbar_links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;      /* 從 navbar 底下開始 */
+  right: 0;       /* 靠右 */
+  background-color: #ffffff;
+  padding: var(--spacing-md);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  z-index: 1000;
+  width: 200px; /* 可依需求調整寬度 */
+}
+
+  .navbar_links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;    
+    margin-right: var(--spacing-sm);
+    scale: 0.8;
+  }
+
+  .hero {
+    flex-direction: column;
+    gap: 2rem;
+    height: auto; /* 避免高度過高 */
+    padding: var(--spacing-md);
+  }
+
+  .hero_text h1 {
+    font-size: clamp(2rem, 6vw, 2.5rem); 
+  }
+
+  .hero_text p {
+    font-size: clamp(1.2rem, 4vw, 1.5rem); 
+  }
+
+  .hero_img img {
+    max-width: min(300px, 80vw); 
+  }
+
+  .projects_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: var(--spacing-md);
+  }
+.about {
+    max-width: 90%;
+    padding: var(--spacing-md);
+  }
+
+  .about_card img {
+    max-width: min(300px, 80vw); 
+  }
+
+  .contact__wrapper {
+    width: 90%;
+    padding: var(--spacing-md);
+  }
+}
+  .projects_card {
+    width: 100%;
+    max-width: 90%; 
+  }
+
+  .project_img img {
+    max-width: 100%; 
+  }
+  .contact_gmail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--font-size-sm);
+  }
+
+  
+@media screen and (max-width: 375px) {
+  .navbar_links {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+  }
+  .navbar_links.active {
+    display: flex;
+  }
+  .hamburger {
+    display: flex;
+  }
+
+  .hero {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero .btn{
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    width: 8rem;
+    border-radius: 2rem;
+  }
+  .hero p {
+    font-size: 1.5rem;
+  }
+  .hero_img {
+    width: 70%;
+  }
+  .about h1{
+    font-size: 1.5rem;
+  }
+  .about_card p{
+    font-size: 1.5rem;
+  }
+  .about_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+  .about_card img {
+    margin-bottom: 2rem;
+  }
+  .about_card p {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .projects_wrapper {
+    display: flex; /* 改用 Flexbox */
+    flex-direction: column;
+    align-items: center; /* 卡片水平置中 */
+    margin: 2rem;
+  }
+
+  .projects_card {
+    width: 100%;
+    max-width: 90%; /* 限制卡片寬度 */
+  }
+  .contact h1{
+    font-size: 1.5rem;
+  }
+  .contact__wrapper {
+    width: 90%;
+    padding: 2rem;
+  }
+}
