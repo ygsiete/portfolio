@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+:root {
+  /* ===== 字體大小 (Mobile First) ===== */
+  --fs-h1: 2rem;    /* 約 32px */
+  --fs-h2: 1.5rem;  /* 約 24px */
+  --fs-body: 1rem;  /* 約 16px */
+  --fs-small: 0.875rem; /* 約 14px */
+
+  /* ===== 間距 (Mobile First) ===== */
+  --spacing-xs: 0.5rem; /* 8px */
+  --spacing-sm: 1rem;   /* 16px */
+  --spacing-md: 1.5rem; /* 24px */
+  --spacing-lg: 2rem;   /* 32px */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== 基本樣式 ===== */
+.container {
+  width: 100%;          /* 手機版全寬 */
+  max-width: 1200px;    /* 桌機版最大寬度 */
+  margin: 0 auto;       /* 置中 */
+  padding: 0 5px;      /* 左右保留空隙 */
+  display: flex;
+  justify-content: space-between;
+}
+.navbar {
+  position: fixed; /* 固定在最上方 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  z-index: 100;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95); 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 可加陰影讓分隔更清楚 */
+}
+.navbar__logo a{
+  font-size: var(--fs-body);
+  font-family: 'macondo', sans-serif ;
+  font-weight: 800;
+  text-decoration: none;
+  color: #000000;
+}
+.navbar__menu {
+  display: flex;            /* 將選單水平排列 */
+  list-style: none;
+  margin: 0;
+  padding: 0 5px ;
+}
+.navbar__menu li {
+  margin-left: 20px;
+}
+.navbar__menu a {
+  text-decoration: none;
+  color: #000000;
+  font-family: 'macondo', sans-serif;
+  font-size: var(--fs-body);
+  font-weight: 500;
+}
+
+/* ===== 首頁 ===== */
+.hero{          
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+.hero_text {
+  font-size: 60px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 50% 0;
+  text-align: center;
+  background: url('background.jpg') no-repeat center 80% / cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+   user-select: none;
+}
+.hero_background {
+  position: relative; 
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  max-height: 1200px;
+  width: 100%;
+  max-width: 1024px;
+}
+.scroll-down {
+  position: absolute;
+  bottom: 20px;                 /* 距離底部 20px，可自行調整 */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+}
+
+.scroll-down span {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-bottom: 2.5px solid #a9a8a8;
+  border-right: 2.5px solid #a9a8a8;
+  transform: rotate(45deg);
+  animation: arrow-down 1.5s infinite ;
+}
+
+.scroll-down span:nth-child(2) {
+  animation-delay: 0.3s; /* 第二個箭頭稍微延遲 */
+}
+
+@keyframes arrow-down {
+  0% {
+    transform: rotate(45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(45deg) translate(5px, 5px);
+    opacity: 0;
+  }
+}
+/* ===== 關於我 ===== */
+.about {
+  display: flex;                 /* 左右排列 */
+  align-items: center;           /* 垂直置中 */
+  justify-content: center;
+  flex-wrap: wrap;                    /* 左右間距 */
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('backtest.jpg'); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.about_card img{
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin: var(--spacing-md);
+}
+.about_title{
+  font-family: 'macondo',sans-serif ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--fs-h1);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+  height: 3rem;
+}
+
+.about_text p{
+  font-size: var(--fs-body);
+  line-height: 2.5;
+  text-align: center;
+  margin:var(--spacing-md);
+  color: #fff;
+}
+/* ===== 專業技能 ===== */
+.skills {
+  width: 80%;
+  max-width: 600px;
+  font-family: sans-serif;
+  margin: 0 auto;
+  padding-top:calc(var(--spacing-lg) * 3);
+}
+
+.skills h2 {
+  font-size: var(--fs-h1);
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-family: 'macondo',sans-serif;
+}
+
+.skill {
+  font-size: var(--fs-h2);
+  font-family: 'macondo',sans-serif;
+  color: #fff;
+  padding: 30px 0 ;
+}
+
+.skill-name {
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.skill-track {
+  position: relative;
+  height: 4px;            /* 線的高度 */
+  background: #ddd;       /* 軌道顏色 */
+  border-radius: 2px;
+}
+
+.skill-dot {
+  position: absolute;
+  top: 50%;
+  left: 0;                /* 初始在最左邊 */
+  transform: translate(-50%, -50%); 
+  width: 16px;            /* 圓點大小 */
+  height: 16px;
+  background: #d0cecd;    /* 圓點顏色，可改 */
+  border-radius: 50%;
+  transition: left 1.5s ease-in-out; /* 動畫 */
+}
+/* ===== 作品 ===== */
+.projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-image: url('backtest.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10rem;
+}
+.projects_title {
+  font-size: var(--fs-h1);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  font-family: 'macondo',sans-serif;
+}
+/* ===== 桌機 ===== */
+@media (min-width: 1024px){
+  .navbar__logo a{
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  .navbar{
+    padding: var(--spacing-sm);
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--spacing-md);
+  }
+  .navbar__menu {
+    gap: 2rem;
+  }
+  .navbar__menu a{
+    font-size: 1.5rem;
+  }
+  .hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('backtest.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+
+  .hero_text {
+      display: flex;
+      justify-content: flex-start;
+      font-size: 140px;
+      margin: 15% 5%;
+   }
+  .hero_background {
+      height: 100vh;
+      max-height: 1400px;
+      width: 100vw;
+      max-width: 1200px;
+      margin: 0;
+  }
+  .about{
+    background-image: url('backtest.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  .about_title {
+    min-height: 2rem;
+    font-size: var(--fs-h1);
+  }
+  .about_card{
+    padding-top:var(--spacing-lg) ;
+  }
+  .about img{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+  }
+  .about p{
+    font-size: var(--fs-h2);
+    font-weight: 500;
+    width: 70%;
+    margin: var(--spacing-lg) auto;
+    line-height: 3;
+  }
+}
+/* ===== 小平板 ===== */
+@media (min-width: 432px) and (max-width: 767px) {
+  .hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero_text {
+      display: flex;
+      justify-content: flex-start;
+      font-size: 5rem;
+      margin: 20% 10%;
+   }
+  .hero_background {
+      height: 100vh;
+      max-height: 1200px;
+      width: 100vw;
+      max-width: 1000px;
+  }
+}
+
+/* ===== 平板 ===== */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero_text {
+      display: flex;
+      justify-content: flex-start;
+      font-size: 100px;
+      margin: 20% 10%;
+   }
+  .hero_background {
+      height: 100vh;
+      max-height: 1200px;
+      width: 100vw;
+      max-width: 1000px;
+  }
+}
