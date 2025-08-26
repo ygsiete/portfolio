@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-vbW0Vb8Z/p+YvD1KX9Iwue+xQ8kzX8sRgn8p0coWfQZc8/3VbbHXD8Vd3FZzWZbJ6EUnT42gDFVqSxDlfYj6tw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <header>
@@ -43,7 +44,9 @@
     <h1 class="about_title">HELLO, I AM HSI !</h1>
     <p>我畢業於高雄科技大學海事資訊科技系。<br> 今年7月剛服役完畢，目前正積極投入職場的新鮮人。大學期間因興趣自學電腦組裝和作業系統安裝。目前能夠使用 HTML、CSS 與 JavaScript，製作RWD網頁，現在正積極學習Vue.js框架，並對Figma有初步使用的經驗和興趣。高中到大學畢業以來有過數個打工經驗，雖然與所學較無關聯，但這些經驗使我學習如何快速融入職場、以及和同事之間的相處，也培養了我喜歡挑戰、樂於學習新技術及知識的熱忱，並希望未來在職場中快速成長，並貢獻自己的所學。</p>
   </div>
-  <div class="skills">
+</section>
+<section class="skills_background">
+    <div class="skills">
     <h2>My Skills</h2>
   <div class="skill">
     <span class="skill-name">HTML</span>
@@ -65,15 +68,39 @@
   </div>
 </section>
 <section class="projects">
-  <div class="projects_container">
-    <h1 class="projects_title">Projects</h1>
+  <h1 class="projects_title">Projects</h1>
     <div class="projects_card">
       <img src="project1.jpg" alt="Project1">
-      <h2>Project1</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sapien vel tincidunt bibendum, velit turpis tincidunt velit, ut tincidunt velit velit vel velit. </p>
+      <h2>Figma原稿RWD切版</h2>
+      <p>此專案為Figma原稿切版，使用HTML、CSS、JavaScript，製作RWD網頁。</p>
     </div>
-  </div>
+    <div class="projects_card">
+      <img src="project1.jpg" alt="Project2">
+      <h2>天氣api串接</h2>
+      <p>此專案為天氣api串接，使用HTML、CSS、JavaScript，以及Open API製作天氣查詢網頁。</p>
+    </div>
 </section>
+<section class="contact" id="contact">
+  <h1 class="contact_title">Contact</h1>
+  <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer class="footer">
+  <p>&copy; 2025 Hsi Portfolio. All rights reserved.</p>
+  <div class="footer_links">
+    <a href="https://ygsiete.github.io/portfolio/" target="_blank" aria-label="GitHub">
+      <i class="fa-brands fa-github"></i> GitHub
+    </a>
+    <a href="mailto:ian900903@gmail.com" aria-label="Email">
+      <i class="fa-solid fa-envelope"></i> Gmail
+    </a>
+  </div>
+</footer>
 <script src="main.js">  
 </script>
 

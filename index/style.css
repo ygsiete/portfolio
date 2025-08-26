@@ -145,17 +145,16 @@
   align-items: center;           /* 垂直置中 */
   justify-content: center;
   flex-wrap: wrap;                    /* 左右間距 */
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('backtest.jpg'); 
+  background-image: linear-gradient(rgba(0,0,0,3), rgba(0,0,0,3)), url('backtest.jpg'); 
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
 }
 .about_card img{
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  margin: var(--spacing-md);
-}
+  margin: var(--spacing-lg);
+  }
 .about_title{
   font-family: 'macondo',sans-serif ;
   display: flex;
@@ -176,6 +175,12 @@
   color: #fff;
 }
 /* ===== 專業技能 ===== */
+.skills_background {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('backtest.jpg'); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: calc(var(--spacing-lg) * 3);
+}
 .skills {
   width: 80%;
   max-width: 600px;
@@ -226,24 +231,125 @@
 }
 /* ===== 作品 ===== */
 .projects {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  background-image: url('backtest.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0.1)), url('backgroundproject.jpg'); 
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 10rem;
+  height: 100vh;
 }
 .projects_title {
   font-size: var(--fs-h1);
   font-weight: 900;
   text-transform: uppercase;
   color: #fff;
-  text-align: center;
-  margin-top: 100px;
-  margin-bottom: 50px;
   font-family: 'macondo',sans-serif;
+  text-align: center;
+  padding: calc(var(--spacing-lg) * 2);
+}
+.about_card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.projects_card img{
+  width: 100%;
+  padding: var(--spacing-md);
+  border-radius: 30px;
+}
+.projects_card h2{
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  font-family: 'macondo',sans-serif;
+}
+.projects_card p{
+  font-size: var(--fs-body);
+  line-height: 2;
+  text-align: center;
+  padding:var(--spacing-md);
+  color: #fff;
+}
+/* ===== 聯絡 ===== */
+.contact {
+  padding: 3rem 1rem;
+  background-color: #000000;
+  text-align: center;
+}
+
+.contact_title {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contact form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact input,
+.contact textarea {
+  padding: 0.8rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.contact button {
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #333;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact button:hover {
+  background-color: #535050;
+}
+
+.footer {
+  background-color: #121212;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+.footer {
+  background-color: #2c2b2b;
+  color: #fff;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.footer_links {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.footer_links i {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900; /* solid */
+}
+.footer_links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer_links a:hover {
+  color: #19083c; 
 }
 /* ===== 桌機 ===== */
 @media (min-width: 1024px){
@@ -270,7 +376,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('backtest.jpg');
+    background-image: url('background2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -290,7 +396,7 @@
       margin: 0;
   }
   .about{
-    background-image: url('backtest.jpg');
+    background-image: url('background2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
