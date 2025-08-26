@@ -17,12 +17,21 @@
   padding: 0;
   box-sizing: border-box;
 }
-.body {
+body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
 
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* ===== 基本樣式 ===== */
 .container {
   width: 100%;          /* 手機版全寬 */
@@ -278,9 +287,10 @@
 }
 
 .contact_title {
+  font-family: 'macondo',sans-serif ;
   color: #fff;
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  font-size: var(--fs-h1);
+  margin-bottom: var(--spacing-lg);
 }
 
 .contact form {
@@ -296,19 +306,21 @@
   padding: 0.8rem 1rem;
   border: 1px solid #ccc;
   border-radius: 10px;
-  font-size: 1rem;
+  font-size: var(--fs-body);
   width: 100%;
+  font-family: 'macondo',sans-serif ;
 }
 
 .contact button {
-  padding: 0.8rem 1rem;
+  padding: var(--spacing-sm);
   border: none;
   border-radius: 10px;
   background-color: #333;
   color: #fff;
-  font-size: 1rem;
+  font-size: var(--fs-body);
+  font-family: 'macondo',sans-serif ;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .contact button:hover {
@@ -316,28 +328,19 @@
 }
 
 .footer {
-  background-color: #121212;
+  background-color: #333;
   color: #fff;
-  padding: 1rem;
-  text-align: center;
-}
-.footer {
-  background-color: #2c2b2b;
-  color: #fff;
-  padding: 1.5rem;
+  padding: 2rem 1rem;
   text-align: center;
 }
 
 .footer_links {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2rem;
 }
-.footer_links i {
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900; /* solid */
-}
+
 .footer_links a {
   color: #fff;
   text-decoration: none;
@@ -349,8 +352,14 @@
 }
 
 .footer_links a:hover {
-  color: #19083c; 
+  color: #ffdd57; /* 滑過變黃色 */
 }
+
+/* 確保 Font Awesome icon 顯示 */
+.footer_links i {
+  font-family: "Font Awesome 6 Free";
+}
+
 /* ===== 桌機 ===== */
 @media (min-width: 1024px){
   .navbar__logo a{

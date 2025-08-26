@@ -1,3 +1,17 @@
+//網頁浮現效果
+const hiddenElements = document.querySelectorAll('.hidden');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+
+hiddenElements.forEach(el => observer.observe(el));
+
 //typewriter effect
 const h1 = document.querySelector('.about_title');
 const text = "HELLO, I AM HSI !";
@@ -61,6 +75,7 @@ window.addEventListener('scroll', animateDots);
 
 
 window.addEventListener('scroll', animateSkills);
+
 
 
 

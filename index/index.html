@@ -12,7 +12,7 @@
   <nav class="navbar">
     <div class="container">
     <div class="navbar__logo">
-      <a href="home" class="navbar_link">YG</a>
+      <a href="#home" class="navbar_link">YG</a>
     </div>
     <ul class="navbar__menu">
         <li class="nav_items">
@@ -28,7 +28,7 @@
   </nav>
 </div>
 </header>
-<section class="hero">
+<section class="hero hidden" id="home">
   <div class="hero_background">
     <h1 class="hero_text">Portfolio</h1>
     <div class="scroll-down">
@@ -36,7 +36,7 @@
         <span></span>
   </div>
 </section>
-<section class="about">
+<section class="about hidden" id="about">
   <div class="about_card">
     <img src="me.jpg" alt="About">
   </div>
@@ -45,7 +45,7 @@
     <p>我畢業於高雄科技大學海事資訊科技系。<br> 今年7月剛服役完畢，目前正積極投入職場的新鮮人。大學期間因興趣自學電腦組裝和作業系統安裝。目前能夠使用 HTML、CSS 與 JavaScript，製作RWD網頁，現在正積極學習Vue.js框架，並對Figma有初步使用的經驗和興趣。高中到大學畢業以來有過數個打工經驗，雖然與所學較無關聯，但這些經驗使我學習如何快速融入職場、以及和同事之間的相處，也培養了我喜歡挑戰、樂於學習新技術及知識的熱忱，並希望未來在職場中快速成長，並貢獻自己的所學。</p>
   </div>
 </section>
-<section class="skills_background">
+<section class="skills_background hidden">
     <div class="skills">
     <h2>My Skills</h2>
   <div class="skill">
@@ -67,7 +67,7 @@
     </div>
   </div>
 </section>
-<section class="projects">
+<section class="projects hidden" id ="projects">
   <h1 class="projects_title">Projects</h1>
     <div class="projects_card">
       <img src="project1.jpg" alt="Project1">
@@ -80,7 +80,7 @@
       <p>此專案為天氣api串接，使用HTML、CSS、JavaScript，以及Open API製作天氣查詢網頁。</p>
     </div>
 </section>
-<section class="contact" id="contact">
+<section class="contact hidden" id="contact">
   <h1 class="contact_title">Contact</h1>
   <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
     <input type="text" name="name" placeholder="Your Name" required>
@@ -90,18 +90,28 @@
   </form>
 </section>
 
-<footer class="footer">
+<footer class="footer hidden" id="footer">
   <p>&copy; 2025 Hsi Portfolio. All rights reserved.</p>
   <div class="footer_links">
-    <a href="https://ygsiete.github.io/portfolio/" target="_blank" aria-label="GitHub">
-      <i class="fa-brands fa-github"></i> GitHub
-    </a>
+    <a href="https://github.com/ygsiete" target="_blank" aria-label="GitHub">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 0.296C5.373 0.296 0 5.67 0 12.296c0 5.293 3.438 9.784 8.205 11.366.6.111.82-.261.82-.58 0-.287-.011-1.243-.016-2.254-3.338.726-4.042-1.611-4.042-1.611-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.492.997.108-.775.419-1.304.762-1.604-2.665-.303-5.467-1.332-5.467-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.522.117-3.173 0 0 1.008-.322 3.3 1.23a11.53 11.53 0 0 1 3-.404c1.02.005 2.045.137 3 .404 2.29-1.552 3.296-1.23 3.296-1.23.655 1.651.243 2.87.12 3.173.77.84 1.236 1.911 1.236 3.221 0 4.61-2.807 5.625-5.48 5.921.43.371.823 1.103.823 2.222 0 1.604-.015 2.896-.015 3.292 0 .321.216.696.825.578C20.565 22.078 24 17.584 24 12.296c0-6.627-5.373-12-12-12z"/>
+  </svg>
+  GitHub
+</a>
+
     <a href="mailto:ian900903@gmail.com" aria-label="Email">
-      <i class="fa-solid fa-envelope"></i> Gmail
-    </a>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M12 13.065l-11-7.065v12h22v-12l-11 7.065z"/>
+    <path d="M12 11l11-7h-22l11 7z"/>
+  </svg>
+  Gmail
+</a>
   </div>
 </footer>
-<script src="main.js">  
+
+<script src="main.js">
+  
 </script>
 
 </body>
