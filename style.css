@@ -158,6 +158,12 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.about_card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
 .about_card img{
   width: 300px;
   height: 300px;
@@ -244,6 +250,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  min-height: 1100px;
 }
 .projects_title {
   font-size: var(--fs-h1);
@@ -254,12 +261,7 @@ body {
   text-align: center;
   padding: calc(var(--spacing-lg) * 2);
 }
-.about_card{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-}
+
 .projects_card img{
   width: 100%;
   padding: var(--spacing-md);
